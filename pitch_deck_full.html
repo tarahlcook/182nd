@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stop Leaving $73K–$127K on the Table</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#111317;
+  --ink2:#3d4049;
+  --ink3:#6b6f7a;
+  --paper:#F9F7F3;
+  --paper2:#F1EDE5;
+  --paper3:#E8E2D8;
+  --gold:#B8882A;
+  --gold-light:#F2C95E;
+  --gold-pale:#FDF6E3;
+  --green:#1B5E38;
+  --green-mid:#2E7D54;
+  --green-light:#E8F4ED;
+  --red:#C0392B;
+  --red-light:#FDECEA;
+  --blue:#1A3A5C;
+  --accent:#E8572A;
+  --white:#FFFFFF;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:'IBM Plex Sans',sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.6;
+  font-size:15px;
+}
+
+/* ── UTILITIES ── */
+.tag{
+  display:inline-block;
+  font-family:'Oswald',sans-serif;
+  font-size:10px;font-weight:500;
+  letter-spacing:3px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:10px;
+}
+.section-wrap{max-width:980px;margin:0 auto;padding:70px 36px}
+h2.section-title{
+  font-family:'Oswald',sans-serif;
+  font-size:clamp(32px,4.5vw,52px);
+  font-weight:700;line-height:1.05;
+  color:var(--ink);margin-bottom:12px;
+}
+h2.section-title em{font-style:normal;color:var(--gold)}
+.lead{font-size:16px;color:var(--ink2);max-width:660px;line-height:1.7;margin-bottom:40px;font-weight:300}
+.divider{height:1px;background:var(--paper3);max-width:980px;margin:0 auto}
+
+/* ── HERO ── */
+.hero{
+  background:var(--ink);
+  color:white;
+  padding:80px 36px 64px;
+  position:relative;
+  overflow:hidden;
+}
+.hero::after{
+  content:'';
+  position:absolute;
+  right:-120px;top:-80px;
+  width:520px;height:520px;
+  border-radius:50%;
+  border:1px solid rgba(184,136,42,0.15);
+}
+.hero::before{
+  content:'';
+  position:absolute;
+  right:-60px;top:-20px;
+  width:340px;height:340px;
+  border-radius:50%;
+  border:1px solid rgba(184,136,42,0.1);
+}
+.hero-inner{max-width:980px;margin:0 auto;position:relative;z-index:1}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  background:rgba(184,136,42,0.18);
+  border:1px solid rgba(184,136,42,0.3);
+  color:var(--gold-light);
+  font-size:11px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;
+  padding:7px 18px;border-radius:40px;margin-bottom:28px;
+}
+.hero-eyebrow span{
+  width:6px;height:6px;border-radius:50%;
+  background:var(--gold-light);animation:pulse 2s ease-in-out infinite;
+}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.7)}}
+.hero h1{
+  font-family:'Oswald',sans-serif;
+  font-size:clamp(44px,7vw,88px);
+  font-weight:700;line-height:.95;
+  letter-spacing:-1px;
+  margin-bottom:24px;
+}
+.hero h1 .line1{color:white}
+.hero h1 .line2{color:var(--gold-light)}
+.hero h1 .line3{color:rgba(255,255,255,0.35)}
+.hero-sub{
+  font-size:16px;color:rgba(255,255,255,0.55);
+  max-width:520px;margin-bottom:50px;font-weight:300;line-height:1.7;
+}
+.hero-stats{
+  display:flex;flex-wrap:wrap;gap:0;
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:12px;overflow:hidden;
+  max-width:700px;
+}
+.hstat{
+  flex:1;min-width:140px;padding:20px 24px;
+  border-right:1px solid rgba(255,255,255,0.08);
+}
+.hstat:last-child{border-right:none}
+.hstat .n{
+  font-family:'Oswald',sans-serif;
+  font-size:32px;font-weight:700;
+  color:var(--gold-light);line-height:1;
+}
+.hstat .l{
+  font-size:11px;color:rgba(255,255,255,0.4);
+  text-transform:uppercase;letter-spacing:1.5px;margin-top:5px;
+}
+
+/* ── NET SHEET ── */
+.net-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;margin-bottom:28px;
+}
+@media(max-width:640px){.net-grid{grid-template-columns:1fr}}
+.net-card{border-radius:14px;overflow:hidden;border:1.5px solid var(--paper3)}
+.net-card.winner{border-color:var(--gold)}
+.net-head{padding:22px 26px 18px}
+.net-head.dark{background:var(--ink)}
+.net-head.green{background:var(--green)}
+.net-head h3{
+  font-family:'Oswald',sans-serif;font-size:22px;
+  font-weight:600;color:white;letter-spacing:.5px;
+}
+.net-head .nh-sub{font-size:12px;color:rgba(255,255,255,0.5);margin-top:3px}
+.net-rows{background:white}
+.net-row{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:11px 26px;border-bottom:1px solid #F2EEE8;
+  font-size:13px;
+}
+.net-row:last-child{border-bottom:none}
+.net-row .rl{color:var(--ink2)}
+.net-row .rv{font-weight:600}
+.rv.minus{color:var(--red)}
+.rv.plus{color:var(--green-mid)}
+.rv.neutral{color:var(--ink)}
+.net-total{
+  padding:18px 26px;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.net-total.t-dark{background:var(--ink)}
+.net-total.t-green{background:var(--green)}
+.net-total .tl-label{
+  font-size:10px;font-weight:600;letter-spacing:2px;
+  color:rgba(255,255,255,0.5);text-transform:uppercase;
+}
+.net-total .tl-num{
+  font-family:'Oswald',sans-serif;font-size:30px;
+  font-weight:700;color:white;line-height:1;
+}
+.net-footer{
+  background:var(--paper);border-top:1px dashed var(--paper3);
+  padding:10px 26px;font-size:12px;color:var(--ink3);text-align:center;
+}
+.winner-badge{
+  position:relative;
+  display:inline-block;
+  background:var(--gold);color:var(--ink);
+  font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  padding:3px 12px;border-radius:0 0 8px 8px;
+  margin-left:12px;vertical-align:top;margin-top:-1px;
+}
+
+.delta-bar{
+  background:var(--green);
+  border-radius:14px;
+  padding:28px 36px;
+  display:flex;align-items:center;
+  justify-content:space-between;flex-wrap:wrap;gap:20px;
+  color:white;
+}
+.delta-big{
+  font-family:'Oswald',sans-serif;
+  font-size:64px;font-weight:700;
+  color:var(--gold-light);line-height:1;
+}
+.delta-label{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:4px}
+.delta-text{font-size:14px;color:rgba(255,255,255,.75);max-width:380px;line-height:1.6;font-weight:300}
+
+/* ── TIMELINE ── */
+.tl-wrap{position:relative;padding-left:0}
+.tl-line{
+  position:absolute;left:36px;top:36px;bottom:36px;
+  width:2px;background:linear-gradient(to bottom,var(--gold),var(--green));
+  border-radius:2px;
+}
+.tl-step{
+  display:flex;gap:28px;margin-bottom:24px;
+  align-items:flex-start;position:relative;
+}
+.tl-num{
+  width:72px;min-width:72px;height:72px;
+  border-radius:50%;
+  background:var(--ink);
+  border:2.5px solid var(--gold);
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  font-family:'Oswald',sans-serif;
+  font-size:11px;font-weight:600;letter-spacing:1px;
+  color:var(--gold-light);line-height:1.1;
+  text-transform:uppercase;
+  text-align:center;z-index:1;
+  flex-shrink:0;
+}
+.tl-num.done{background:var(--green);border-color:var(--green);color:white}
+.tl-body{
+  background:white;border:1px solid var(--paper3);
+  border-radius:12px;padding:20px 24px;flex:1;
+  margin-top:8px;
+}
+.tl-body h4{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:5px}
+.tl-body p{font-size:13px;color:var(--ink2);line-height:1.55}
+.tl-chip{
+  display:inline-block;margin-top:10px;
+  background:var(--gold-pale);border:1px solid rgba(184,136,42,0.3);
+  color:var(--gold);font-size:10px;font-weight:600;
+  letter-spacing:1.5px;text-transform:uppercase;
+  padding:4px 12px;border-radius:20px;
+}
+.tl-chip.green-chip{background:var(--green-light);border-color:rgba(27,94,56,0.3);color:var(--green-mid)}
+
+/* ── VS TABLE ── */
+.vs-wrap{
+  background:white;border-radius:16px;
+  border:1.5px solid var(--paper3);overflow:hidden;
+}
+.vs-head{
+  display:grid;grid-template-columns:2.2fr 1fr 1fr;
+  background:var(--ink);padding:14px 28px;gap:8px;
+}
+.vs-head span{
+  font-size:10px;font-weight:600;letter-spacing:2.5px;
+  text-transform:uppercase;color:rgba(255,255,255,0.45);
+  text-align:center;
+}
+.vs-head span:first-child{text-align:left}
+.vs-head .gold-col{color:var(--gold-light)}
+.vs-row{
+  display:grid;grid-template-columns:2.2fr 1fr 1fr;
+  padding:13px 28px;gap:8px;
+  border-bottom:1px solid var(--paper2);
+  align-items:center;font-size:13px;
+}
+.vs-row:nth-child(even){background:#FAFAF8}
+.vs-row:last-child{border-bottom:none}
+.vs-feat{font-weight:500;color:var(--ink)}
+.vs-cell{text-align:center;font-size:18px}
+.ck{color:var(--green-mid);font-weight:700}
+.xk{color:var(--red)}
+.pk{color:var(--gold);font-size:14px;font-weight:700}
+
+/* ── CHECKLIST GRAPHIC ── */
+.checklist-graphic{
+  background:var(--ink);border-radius:20px;
+  padding:44px 40px;color:white;
+}
+.cg-title{
+  font-family:'Oswald',sans-serif;
+  font-size:clamp(26px,3.5vw,40px);
+  font-weight:700;color:white;margin-bottom:6px;letter-spacing:.5px;
+}
+.cg-title span{color:var(--gold-light)}
+.cg-sub{font-size:14px;color:rgba(255,255,255,.45);margin-bottom:36px;font-weight:300}
+.cg-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:560px){.cg-grid{grid-template-columns:1fr}}
+.cg-item{
+  display:flex;align-items:center;gap:14px;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:10px;padding:14px 16px;
+}
+.cg-check{
+  width:32px;height:32px;min-width:32px;
+  background:var(--green-mid);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+}
+.cg-check svg{width:15px;height:15px}
+.cg-item-text{font-size:13px;font-weight:500;color:rgba(255,255,255,.9);line-height:1.3}
+.cg-item-text small{display:block;font-size:11px;font-weight:300;color:rgba(255,255,255,.4);margin-top:2px}
+
+/* ── ABOUT ── */
+.about-wrap{
+  background:var(--ink);
+  border-radius:20px;padding:44px;
+  color:white;
+  display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:start;
+}
+@media(max-width:600px){.about-wrap{grid-template-columns:1fr}}
+.about-avatar{
+  width:100px;height:100px;
+  border-radius:50%;background:var(--gold);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Oswald',sans-serif;font-size:36px;font-weight:700;
+  color:var(--ink);letter-spacing:1px;
+  border:3px solid rgba(255,255,255,0.1);
+}
+.about-name{font-family:'Oswald',sans-serif;font-size:28px;font-weight:700;color:var(--gold-light);letter-spacing:.5px;margin-bottom:2px}
+.about-role{font-size:11px;color:rgba(255,255,255,.35);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:20px}
+.about-body{font-size:14px;color:rgba(255,255,255,.7);line-height:1.7;font-weight:300;margin-bottom:24px}
+.about-tags{display:flex;flex-wrap:wrap;gap:8px}
+.atag{
+  background:rgba(184,136,42,0.18);
+  border:1px solid rgba(184,136,42,0.3);
+  color:var(--gold-light);
+  font-size:11px;font-weight:500;letter-spacing:1px;text-transform:uppercase;
+  padding:5px 14px;border-radius:30px;
+}
+
+/* ── GUARANTEE CARDS ── */
+.guarantee-row{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px;
+}
+@media(max-width:600px){.guarantee-row{grid-template-columns:1fr}}
+.g-card{
+  background:white;border:1px solid var(--paper3);border-top:3px solid var(--gold);
+  border-radius:12px;padding:22px 18px;text-align:center;
+}
+.g-icon{font-size:28px;margin-bottom:10px}
+.g-card h5{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:5px}
+.g-card p{font-size:12px;color:var(--ink3);line-height:1.5}
+
+/* ── ALERT / CALLOUT ── */
+.callout{
+  background:var(--gold-pale);
+  border:2px solid var(--gold);
+  border-radius:14px;padding:24px 28px;
+  display:flex;gap:16px;align-items:flex-start;margin-top:24px;
+}
+.callout-icon{font-size:26px;line-height:1;padding-top:2px;flex-shrink:0}
+.callout h4{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:5px}
+.callout p{font-size:13px;color:var(--ink2);line-height:1.55}
+.callout strong{color:var(--green)}
+
+/* ── CTA ── */
+.cta-section{background:var(--ink);padding:80px 36px}
+.cta-inner{max-width:760px;margin:0 auto;text-align:center}
+.cta-inner .tag{color:var(--gold-light)}
+.cta-inner h2{
+  font-family:'Oswald',sans-serif;
+  font-size:clamp(30px,5vw,56px);font-weight:700;
+  color:white;line-height:1.05;margin-bottom:16px;
+}
+.cta-inner h2 em{font-style:normal;color:var(--gold-light)}
+.cta-inner p{font-size:15px;color:rgba(255,255,255,.5);max-width:500px;margin:0 auto 36px;font-weight:300;line-height:1.7}
+.btn-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{
+  display:inline-block;padding:15px 42px;
+  border-radius:50px;font-size:13px;font-weight:600;
+  letter-spacing:1.5px;text-transform:uppercase;
+  text-decoration:none;cursor:pointer;border:none;font-family:'IBM Plex Sans',sans-serif;
+}
+.btn-gold{background:var(--gold);color:var(--ink)}
+.btn-outline{background:transparent;color:white;border:1.5px solid rgba(255,255,255,.25)}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.fade-up{animation:fadeUp .6s ease both}
+.d1{animation-delay:.05s}.d2{animation-delay:.12s}.d3{animation-delay:.2s}.d4{animation-delay:.28s}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════ HERO ═══════════════════ -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow"><span></span>Prepared exclusively for Kevin &amp; Heather Sheridan &nbsp;·&nbsp; 15257 S 182nd Ln, Goodyear AZ 85338</div>
+    <h1>
+      <div class="line1 fade-up d1">DON'T LEAVE</div>
+      <div class="line2 fade-up d2">$73K–$127K</div>
+      <div class="line3 fade-up d3">ON THE TABLE.</div>
+    </h1>
+    <p class="hero-sub fade-up d4">The $500K cash offer looks clean. But after fees and credits, you net ~$457K. The M1 Strategy puts $530K–$584K in your pocket — and you still never deal with a single showing while you're home.</p>
+    <div class="hero-stats fade-up d4">
+      <div class="hstat"><div class="n">$605K–$670K</div><div class="l">Your real market value</div></div>
+      <div class="hstat"><div class="n">$500K</div><div class="l">Cash offer on table</div></div>
+      <div class="hstat"><div class="n">$0</div><div class="l">Showings while occupied</div></div>
+      <div class="hstat"><div class="n">$73K–$127K</div><div class="l">More with M1 Strategy</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ PROPERTY DETAILS ═══════════════════ -->
+<section style="background:var(--paper2);padding:0">
+<div class="section-wrap" style="padding-top:48px;padding-bottom:48px">
+  <div class="tag">Your property snapshot</div>
+  <h2 class="section-title" style="font-size:clamp(22px,3vw,32px);margin-bottom:24px">15257 S 182nd Ln &nbsp;·&nbsp; <em>Goodyear, AZ 85338</em></h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px">
+    <div style="background:white;border:1px solid var(--paper3);border-top:3px solid var(--gold);border-radius:10px;padding:16px 18px">
+      <div style="font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--ink3);margin-bottom:5px">Clients</div>
+      <div style="font-size:15px;font-weight:600;color:var(--ink)">Kevin &amp; Heather Sheridan</div>
+    </div>
+    <div style="background:white;border:1px solid var(--paper3);border-top:3px solid var(--gold);border-radius:10px;padding:16px 18px">
+      <div style="font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--ink3);margin-bottom:5px">Purchase Year</div>
+      <div style="font-size:15px;font-weight:600;color:var(--ink)">2018</div>
+    </div>
+    <div style="background:white;border:1px solid var(--paper3);border-top:3px solid var(--gold);border-radius:10px;padding:16px 18px">
+      <div style="font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--ink3);margin-bottom:5px">Purchase Price</div>
+      <div style="font-size:15px;font-weight:600;color:var(--ink)">$358,000</div>
+    </div>
+    <div style="background:white;border:1px solid var(--paper3);border-top:3px solid var(--gold);border-radius:10px;padding:16px 18px">
+      <div style="font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--ink3);margin-bottom:5px">Est. Loan Balance</div>
+      <div style="font-size:15px;font-weight:600;color:var(--ink)">~$360,000</div>
+    </div>
+    <div style="background:white;border:1px solid var(--paper3);border-top:3px solid var(--green);border-radius:10px;padding:16px 18px">
+      <div style="font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--ink3);margin-bottom:5px">Current Market Value</div>
+      <div style="font-size:15px;font-weight:600;color:var(--green-mid)">$605K – $670K</div>
+    </div>
+    <div style="background:white;border:1px solid var(--paper3);border-top:3px solid var(--green);border-radius:10px;padding:16px 18px">
+      <div style="font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--ink3);margin-bottom:5px">Est. Equity Available</div>
+      <div style="font-size:15px;font-weight:600;color:var(--green-mid)">$245K – $310K</div>
+    </div>
+    <div style="background:white;border:1px solid var(--paper3);border-top:3px solid var(--ink);border-radius:10px;padding:16px 18px">
+      <div style="font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--ink3);margin-bottom:5px">Home Age</div>
+      <div style="font-size:15px;font-weight:600;color:var(--ink)">&lt; 8 Years · Good Condition</div>
+    </div>
+    <div style="background:white;border:1px solid var(--paper3);border-top:3px solid var(--ink);border-radius:10px;padding:16px 18px">
+      <div style="font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--ink3);margin-bottom:5px">Cash Offer Received</div>
+      <div style="font-size:15px;font-weight:600;color:var(--red)">$500,000</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ═══════════════════ NET SHEET ═══════════════════ -->
+<section>
+<div class="section-wrap">
+  <div class="tag">The real numbers — side by side</div>
+  <h2 class="section-title">Cash Offer vs. <em>Listing With Us</em></h2>
+  <p class="lead">Here's exactly what you walk away with under each scenario. Cash buyers profit off your urgency. We protect your equity.</p>
+
+  <div class="net-grid">
+
+    <!-- CASH -->
+    <div class="net-card">
+      <div class="net-head dark">
+        <h3>💸 Cash Offer Route</h3>
+        <div class="nh-sub">iBuyer / Investor Purchase</div>
+      </div>
+      <div class="net-rows">
+        <div class="net-row"><span class="rl">Cash offer received</span><span class="rv minus">$500,000</span></div>
+        <div class="net-row"><span class="rl">Investor "convenience" fee (~6%)</span><span class="rv minus">−$30,000</span></div>
+        <div class="net-row"><span class="rl">Repair credits demanded</span><span class="rv minus">−$9,000</span></div>
+        <div class="net-row"><span class="rl">Seller closing costs (~0.75%)</span><span class="rv minus">−$3,750</span></div>
+        <div class="net-row"><span class="rl">Agent commissions</span><span class="rv neutral">$0</span></div>
+      </div>
+      <div class="net-total t-dark">
+        <div>
+          <div class="tl-label">Net to you</div>
+          <div class="tl-num">~$457,250</div>
+        </div>
+      </div>
+      <div class="net-footer">Based on $500,000 cash offer received</div>
+    </div>
+
+    <!-- LIST WITH US -->
+    <div class="net-card winner">
+      <div class="net-head green">
+        <h3>🏆 List With Us — M1 Strategy <span class="winner-badge">Recommended</span></h3>
+        <div class="nh-sub">MOVE 1st · Equity Unlock Strategy + Full Market Sale</div>
+      </div>
+      <div class="net-rows">
+        <div class="net-row"><span class="rl">Conservative list price</span><span class="rv plus">$605,000</span></div>
+        <div class="net-row"><span class="rl">Agent commissions (6%)</span><span class="rv minus">−$36,300</span></div>
+        <div class="net-row"><span class="rl">Buyer concession buffer (3%)</span><span class="rv minus">−$18,150</span></div>
+        <div class="net-row"><span class="rl">Seller closing costs (~0.6%)</span><span class="rv minus">−$3,630</span></div>
+        <div class="net-row"><span class="rl">Professional staging — $4,000 <span style="background:#1B5E38;color:#fff;font-size:9px;font-weight:700;padding:2px 7px;border-radius:4px;letter-spacing:1px;margin-left:4px">WE MANAGE THIS</span></span><span class="rv minus">−$4,000</span></div>
+        <div class="net-row"><span class="rl">Paint &amp; repairs — $8,000 <span style="background:#1B5E38;color:#fff;font-size:9px;font-weight:700;padding:2px 7px;border-radius:4px;letter-spacing:1px;margin-left:4px">WE MANAGE THIS</span></span><span class="rv minus">−$8,000</span></div>
+        <div class="net-row"><span class="rl">M1 Strategy carry cost (~60 days)</span><span class="rv minus">−$4,200</span></div>
+      </div>
+      <div class="net-total t-green">
+        <div>
+          <div class="tl-label">Low-end net to you</div>
+          <div class="tl-num">~$530,720</div>
+        </div>
+      </div>
+      <div class="net-footer">High-end ($670K sale) → Net <strong>~$584,220</strong> &nbsp;|&nbsp; That's <strong>$127K more</strong> than the cash offer</div>
+    </div>
+
+  </div>
+
+  <!-- DELTA BANNER -->
+  <div class="delta-bar">
+    <div>
+      <div class="delta-label">More in your pocket vs. the $500K cash offer</div>
+      <div class="delta-big">$73,470</div>
+      <div style="font-size:12px;color:rgba(255,255,255,.4);margin-top:4px">Conservative ($605K sale). High-end scenario ($670K): +$127,000 more.</div>
+    </div>
+    <div class="delta-text">
+      The $500K cash offer nets you ~$457K after their fees. With the M1 Strategy, you net $530K–$584K — even after full commissions, a 3% concession buffer, staging, and repairs all transparently shown. Every cost is on the table. You still come out $73K to $127K ahead.
+    </div>
+  </div>
+
+  <div class="callout" style="margin-top:24px">
+    <div class="callout-icon">🛡️</div>
+    <div>
+      <h4>For the officer in the room: Your concern is 100% valid — and 100% solved.</h4>
+      <p>The bridge program means <strong>you are living in your new home before we ever put a sign in the yard.</strong> Buyers walk through an empty, staged property. You are never there. No strangers. No schedule conflicts. No security concerns. Zero showings on your watch.</p>
+    </div>
+  </div>
+</div>
+</section>
+<div class="divider"></div>
+
+<!-- ═══════════════════ PROCESS TIMELINE ═══════════════════ -->
+<section>
+<div class="section-wrap">
+  <div class="tag">The M1 Strategy — step by step</div>
+  <h2 class="section-title">MOVE 1st. Sell Smart. <em>Keep More.</em></h2>
+  <p class="lead">The MOVE 1st · Equity Unlock Strategy solves both of your problems at once: you move into your new home first, then we sell your current one for maximum value. You make one decision. We handle everything else.</p>
+
+  <div class="tl-wrap">
+    <div class="tl-line"></div>
+
+    <div class="tl-step">
+      <div class="tl-num">WEEK<br>1</div>
+      <div class="tl-body">
+        <h4>M1 Strategy Activated — Down Payment + Improvement Budget, Unlocked</h4>
+        <p>The MOVE 1st · Equity Unlock Strategy taps the equity you've already built at 15257 S 182nd Ln to do two things simultaneously: <strong>(1)</strong> provides the <em>down payment on your new home</em> — making you a strong, non-contingent buyer with zero dependency on your current home selling first. <strong>(2)</strong> Funds a dedicated improvement budget for staging and prep on the home you're selling, so you're not out-of-pocket a single dollar before close.</p>
+        <span class="tl-chip">M1 Strategy — MOVE 1st · Equity Unlock</span>
+      </div>
+    </div>
+
+    <div class="tl-step">
+      <div class="tl-num">WEEK<br>1–2</div>
+      <div class="tl-body">
+        <h4>Our Crew Moves In — Bridge Budget Covers Everything</h4>
+        <p>The bridge program's improvement budget funds the staging ($4K) and paint/repairs ($8K) — we manage every contractor, every vendor, every detail. HDR photography and 3D virtual tour included. You're settled into your new home. You do zero. Spend zero.</p>
+        <span class="tl-chip">M1-Funded Prep — WE MANAGE THIS</span>
+      </div>
+    </div>
+
+    <div class="tl-step">
+      <div class="tl-num">WEEK<br>3</div>
+      <div class="tl-body">
+        <h4>Strategic Launch — Maximum Buyer Competition</h4>
+        <p>We list at peak timing with full marketing: targeted Meta/Google ads, MLS exposure, agent network blast, and open houses run entirely by our team. The home hits the market looking its absolute best — and you're not there for any of it.</p>
+        <span class="tl-chip">Full Market Launch</span>
+      </div>
+    </div>
+
+    <div class="tl-step">
+      <div class="tl-num done">DAY<br>30</div>
+      <div class="tl-body">
+        <h4>Under Contract — On or Before 30 Days</h4>
+        <p>A well-prepared, well-priced home in good condition sells fast. We're targeting a ratified contract within 30 days of listing. Not a cash buyer's discount — a full-price offer from a qualified buyer who pays market value.</p>
+        <span class="tl-chip green-chip">Under Contract ✓</span>
+      </div>
+    </div>
+
+    <div class="tl-step">
+      <div class="tl-num done">CLOSE</div>
+      <div class="tl-body">
+        <h4>Close, M1 Strategy Pays Off, Equity Goes to You</h4>
+        <p>Sale proceeds automatically pay off the M1 Strategy balance at closing. What's left — conservatively ~$530K, up to ~$584K on the high end — goes directly to Kevin &amp; Heather. Compare that to $457K netting from the $500K cash offer. That's $73K–$127K you kept by doing this right.</p>
+        <span class="tl-chip green-chip">Maximum Net Proceeds ✓</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+<div class="divider"></div>
+
+<!-- ═══════════════════ VS TABLE ═══════════════════ -->
+<section>
+<div class="section-wrap">
+  <div class="tag">Feature for feature</div>
+  <h2 class="section-title">What You Actually <em>Get</em></h2>
+  <p class="lead">Cash offers look simple. Let's see if they actually solve what matters to you.</p>
+
+  <div class="vs-wrap">
+    <div class="vs-head">
+      <span>What matters</span>
+      <span>Cash Offer</span>
+      <span class="gold-col">List With Us ★</span>
+    </div>
+    <div class="vs-row"><div class="vs-feat">No showings while you're living there</div><div class="vs-cell"><span class="xk">✗</span></div><div class="vs-cell"><span class="ck">✓</span></div></div>
+    <div class="vs-row"><div class="vs-feat">Move into new home BEFORE selling</div><div class="vs-cell"><span class="xk">✗</span></div><div class="vs-cell"><span class="ck">✓</span></div></div>
+    <div class="vs-row"><div class="vs-feat">Full market value — not 70 cents on dollar</div><div class="vs-cell"><span class="xk">✗</span></div><div class="vs-cell"><span class="ck">✓</span></div></div>
+    <div class="vs-row"><div class="vs-feat">No repairs or prep out of your pocket</div><div class="vs-cell"><span class="pk">~</span></div><div class="vs-cell"><span class="ck">✓</span></div></div>
+    <div class="vs-row"><div class="vs-feat">Professional staging &amp; photography</div><div class="vs-cell"><span class="xk">✗</span></div><div class="vs-cell"><span class="ck">✓</span></div></div>
+    <div class="vs-row"><div class="vs-feat">Under contract in 30 days</div><div class="vs-cell"><span class="ck">✓</span></div><div class="vs-cell"><span class="ck">✓</span></div></div>
+    <div class="vs-row"><div class="vs-feat">No strangers in home while occupied</div><div class="vs-cell"><span class="ck">✓</span></div><div class="vs-cell"><span class="ck">✓</span></div></div>
+    <div class="vs-row"><div class="vs-feat">One point of contact for everything</div><div class="vs-cell"><span class="xk">✗</span></div><div class="vs-cell"><span class="ck">✓</span></div></div>
+    <div class="vs-row"><div class="vs-feat">Investor expertise — knows what sells</div><div class="vs-cell"><span class="xk">✗</span></div><div class="vs-cell"><span class="ck">✓</span></div></div>
+    <div class="vs-row"><div class="vs-feat">$73,000–$127,000 more in your pocket</div><div class="vs-cell"><span class="xk">✗</span></div><div class="vs-cell"><span class="ck">✓</span></div></div>
+  </div>
+
+  <!-- CHECKLIST GRAPHIC -->
+  <div class="checklist-graphic" style="margin-top:28px">
+    <div class="cg-title">With Us, You Get <span>Everything.</span></div>
+    <div class="cg-sub">Simple. Stress-free. Maximum profit. Check.</div>
+    <div class="cg-grid">
+      <div class="cg-item">
+        <div class="cg-check"><svg viewBox="0 0 15 12" fill="none"><path d="M1 6l4.5 4.5L14 1" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="cg-item-text">You move first — always<small>New home secured before we list yours</small></div>
+      </div>
+      <div class="cg-item">
+        <div class="cg-check"><svg viewBox="0 0 15 12" fill="none"><path d="M1 6l4.5 4.5L14 1" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="cg-item-text">Zero showings while occupied<small>Empty + staged when buyers visit</small></div>
+      </div>
+      <div class="cg-item">
+        <div class="cg-check"><svg viewBox="0 0 15 12" fill="none"><path d="M1 6l4.5 4.5L14 1" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="cg-item-text">M1 Strategy funds staging + repairs ($12K)<small>Down payment AND improvement budget — covered</small></div>
+      </div>
+      <div class="cg-item">
+        <div class="cg-check"><svg viewBox="0 0 15 12" fill="none"><path d="M1 6l4.5 4.5L14 1" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="cg-item-text">Under contract in 30 days<small>Clean, move-in ready home sells fast</small></div>
+      </div>
+      <div class="cg-item">
+        <div class="cg-check"><svg viewBox="0 0 15 12" fill="none"><path d="M1 6l4.5 4.5L14 1" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="cg-item-text">$530K–$584K net to you<small>Not $457K net from the $500K cash offer</small></div>
+      </div>
+      <div class="cg-item">
+        <div class="cg-check"><svg viewBox="0 0 15 12" fill="none"><path d="M1 6l4.5 4.5L14 1" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="cg-item-text">One call. We quarterback everything.<small>Contractor → stager → list → close</small></div>
+      </div>
+      <div class="cg-item">
+        <div class="cg-check"><svg viewBox="0 0 15 12" fill="none"><path d="M1 6l4.5 4.5L14 1" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="cg-item-text">Investor + agent hybrid expertise<small>We know what buyers actually pay for</small></div>
+      </div>
+      <div class="cg-item">
+        <div class="cg-check"><svg viewBox="0 0 15 12" fill="none"><path d="M1 6l4.5 4.5L14 1" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="cg-item-text">Protect $240K+ in equity you earned<small>Don't hand it to an investor</small></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</section>
+<div class="divider"></div>
+
+<!-- ═══════════════════ ABOUT ═══════════════════ -->
+<section>
+<div class="section-wrap">
+  <div class="tag">Who you're working with</div>
+  <h2 class="section-title">Built Different. <em>By Design.</em></h2>
+  <p class="lead">Most people in this industry are either investors or agents. Tarah is both — and that changes everything about how she approaches your situation.</p>
+
+  <div class="about-wrap">
+    <div>
+      <div class="about-avatar">TC</div>
+    </div>
+    <div>
+      <div class="about-name">Tarah Cook</div>
+      <div class="about-role">Founder, The Collective &nbsp;·&nbsp; Licensed Realtor &nbsp;·&nbsp; Active Investor &nbsp;·&nbsp; Investment Architect</div>
+      <div class="about-body">
+        Here's something you won't hear from most agents or cash buyers: <strong style="color:var(--gold-light)">we actively purchase homes for cash.</strong> The Collective is a real estate investment operation — we buy properties, we flip them, we hold them. So when a cash offer makes sense for a homeowner, we can be the buyer.<br><br>
+        But here's what separates us from every other investor knocking on your door: <em>our focus isn't equity stripping.</em> If a client truly needs a fast cash close and the numbers justify it from an investment standpoint, we buy the home and everyone wins. But if the numbers don't make sense as an investment — which means the homeowner has a significantly better path — we're not going to make an offer that benefits us at your expense. We're going to show you the better option and help you execute it.<br><br>
+        Kevin and Heather, that's exactly where you are. The cash offer on your home is below what makes sense as an investment for us — and far below what you can net on the open market. The M1 Strategy solves every concern you have: no showings while you're home, move first, zero hassle. And it puts $73K–$127K more in your pocket. <strong style="color:var(--gold-light)">That's not a sales pitch. That's just the math.</strong>
+      </div>
+      <div class="about-tags">
+        <span class="atag">Licensed Realtor</span>
+        <span class="atag">Active Investor</span>
+        <span class="atag">Investment Architect</span>
+        <span class="atag">M1 Strategy Specialist</span>
+        <span class="atag">Contractor Network</span>
+        <span class="atag">30-Day Close Track Record</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- THE COLLECTIVE BLURB -->
+  <div style="background:var(--paper2);border:1px solid var(--paper3);border-left:4px solid var(--gold);border-radius:12px;padding:28px 32px;margin-top:28px">
+    <div style="font-size:10px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:8px">About The Collective</div>
+    <p style="font-size:14px;color:var(--ink2);line-height:1.7;font-weight:300">
+      The Collective is a vertically integrated real estate operation — active buyers, licensed agents, and investment strategists under one roof. We evaluate every property through an investor's lens first. When a cash purchase makes sense as an investment, we buy. When it doesn't — and the homeowner has a better path — we build that path for them. We don't have a quota of homes to lowball. We have a reputation to protect. <strong>Our business is built on doing the right thing by our clients, every time.</strong>
+    </p>
+  </div>
+
+  <div class="guarantee-row">
+    <div class="g-card">
+      <div class="g-icon">🔨</div>
+      <h5>M1-Funded Prep</h5>
+      <p>Staging ($4K) and paint/repairs ($8K) funded by the M1 Strategy — managed entirely by our team. Zero out-of-pocket before closing.</p>
+    </div>
+    <div class="g-card">
+      <div class="g-icon">📸</div>
+      <h5>Maximum Market Exposure</h5>
+      <p>3D tour, drone footage, digital ads, MLS, and direct agent outreach. Your home competes — and wins.</p>
+    </div>
+    <div class="g-card">
+      <div class="g-icon">📞</div>
+      <h5>One Number. Done.</h5>
+      <p>From M1 activation to closing check, you make one call. Tarah coordinates every contractor, vendor, and buyer.</p>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<!-- ═══════════════════ CTA ═══════════════════ -->
+<div class="cta-section">
+  <div class="cta-inner">
+    <div class="tag">The bottom line</div>
+    <h2>A cash offer gives you <em>$500K.</em><br>The M1 Strategy puts <em>$530K–$584K</em> in your pocket.</h2>
+    <p>Same zero hassle. Same no showings while you're home. Just $73,000 to $127,000 more — with every cost shown transparently. Ready to move forward, Kevin &amp; Heather?</p>
+    <div class="btn-row">
+      <a href="tel:+1XXXXXXXXXX" class="btn btn-gold">📞 Call Tarah Now</a>
+      <a href="sms:+1XXXXXXXXXX" class="btn btn-outline">💬 Text Tarah</a>
+      <a href="mailto:tarah@thecollective.com" class="btn btn-outline">✉️ Email Tarah</a>
+    </div>
+    <div style="margin-top:32px;padding-top:28px;border-top:1px solid rgba(255,255,255,0.1);font-size:12px;color:rgba(255,255,255,0.3);line-height:1.8">
+      <strong style="color:rgba(255,255,255,0.6)">Tarah Cook</strong> &nbsp;·&nbsp; Founder, The Collective &nbsp;·&nbsp; Licensed Realtor &nbsp;·&nbsp; Active Investor &nbsp;·&nbsp; Investment Architect<br>
+      This analysis was prepared exclusively for Kevin &amp; Heather Sheridan &nbsp;·&nbsp; 15257 S 182nd Ln, Goodyear AZ 85338
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
